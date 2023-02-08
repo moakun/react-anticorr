@@ -4,6 +4,7 @@ import { Alert, AlertTitle } from '@mui/material';
 import { useAuthContext } from '../../../Hooks/useAuthContext';
 import jsPDF from 'jspdf';
 import { useGotAttestation } from '../../../Hooks/useGotAttestation';
+import html2canvas from 'html2canvas';
 
 function Attestasion() {
   const { user } = useAuthContext();
@@ -22,19 +23,25 @@ function Attestasion() {
     await gotAttestation(userName, firstName, lastName, companyName);
   };
 
-  const generatePDF = () => {
+  const generatePDF = async () => {
+    const element = document.querySelector('#content');
+    const canvas = await html2canvas(element);
+    const imgData = canvas.toDataURL('image/png');
     const doc = new jsPDF('landscape', 'pt', 'a4');
-    doc.html(document.querySelector('#content'), {
-      callback: function (pdf) {
-        pdf.save('Attestation.pdf');
-      },
-    });
+    const imgWidth = element.offsetWidth;
+    const imgHeight = element.offsetHeight;
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const x = (pageWidth - imgWidth) / 140;
+    const y = (pageHeight - imgHeight) / 140;
+    doc.addImage(imgData, 'PNG', x, y, imgWidth, imgHeight);
+    doc.save('Attestation.pdf');
     handleSubmit();
   };
 
   return (
     <div>
-      <div id="content">
+      <div id="content" className="pt-5">
         <div className="border-4 border-gray-500 m-10 w-6/12">
           <div className="border-4 border-gray-500 m-1">
             <div className="flex flex-col justify-center items-center">

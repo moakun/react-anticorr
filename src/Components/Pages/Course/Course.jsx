@@ -16,46 +16,46 @@ function Course() {
               <div className="flex-1">
                 <ul className="pt-2 pb-4 space-y-1 text-sm">
                   <li className="rounded-sm">
-                    <a className="flex items-center p-2 space-x-3 rounded-md">
+                    <h6 className="flex items-center p-2 space-x-3 rounded-md">
                       <span className="text-gray-100 hover:text-black font-poppins">
                         Objectifs
                       </span>
-                    </a>
+                    </h6>
                   </li>
                   <li className="rounded-sm">
-                    <a className="flex items-center p-2 space-x-3 rounded-md">
+                    <h6 className="flex items-center p-2 space-x-3 rounded-md">
                       <span className="text-gray-100 hover:text-black font-poppins">
                         La corruption qu’est ce que c’est ?
                       </span>
-                    </a>
+                    </h6>
                   </li>
                   <li className="rounded-sm">
-                    <a className="flex items-center p-2 space-x-3 rounded-md">
+                    <h6 className="flex items-center p-2 space-x-3 rounded-md">
                       <span className="text-gray-100 hover:text-black font-poppins">
                         Pour Notre Pays
                       </span>
-                    </a>
+                    </h6>
                   </li>
                   <li className="rounded-sm">
-                    <a className="flex items-center p-2 space-x-3 rounded-md">
+                    <h6 className="flex items-center p-2 space-x-3 rounded-md">
                       <span className="text-gray-100 hover:text-black font-poppins">
                         Le bénin et la corruption
                       </span>
-                    </a>
+                    </h6>
                   </li>
                   <li className="rounded-sm">
-                    <a className="flex items-center p-2 space-x-3 rounded-md">
+                    <h6 className="flex items-center p-2 space-x-3 rounded-md">
                       <span className="text-gray-100 hover:text-black font-poppins">
                         Engagement du groupe VINCI
                       </span>
-                    </a>
+                    </h6>
                   </li>
                   <li className="rounded-sm">
-                    <a className="flex items-center p-2 space-x-3 rounded-md">
+                    <h6 className="flex items-center p-2 space-x-3 rounded-md">
                       <span className="text-gray-100 hover:text-black font-poppins">
                         Le Référentiel éthique de VINCI
                       </span>
-                    </a>
+                    </h6>
                   </li>
                 </ul>
               </div>

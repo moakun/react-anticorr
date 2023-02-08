@@ -10,7 +10,7 @@ function CoursePartTwo() {
   const [firstName] = useState(user.firstName);
   const [lastName] = useState(user.lastName);
   const [companyName] = useState(user.companyName);
-  const { testChange, isLoading, error } = useTestChange();
+  const { testChange, isLoading } = useTestChange();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,55 +34,55 @@ function CoursePartTwo() {
                 <div className="flex-1">
                   <ul className="pt-2 pb-4 space-y-1 text-sm">
                     <li className="rounded-sm">
-                      <a className="flex items-center p-2 space-x-3 rounded-md">
+                      <h6 className="flex items-center p-2 space-x-3 rounded-md">
                         <span className="text-gray-100 hover:text-black font-poppins">
                           Procédure D’évaluation des tiers
                         </span>
-                      </a>
+                      </h6>
                     </li>
                     <li className="rounded-sm">
-                      <a className="flex items-center p-2 space-x-3 rounded-md">
+                      <h6 className="flex items-center p-2 space-x-3 rounded-md">
                         <span className="text-gray-100 hover:text-black font-poppins">
                           La Politique ethique et anti corruption politique de
                           l'agence du benin
                         </span>
-                      </a>
+                      </h6>
                     </li>
                     <li className="rounded-sm">
-                      <a className="flex items-center p-2 space-x-3 rounded-md">
+                      <h6 className="flex items-center p-2 space-x-3 rounded-md">
                         <span className="text-gray-100 hover:text-black font-poppins">
                           Règles en matières de: Cadeaux, Voyages, Invitations
                         </span>
-                      </a>
+                      </h6>
                     </li>
                     <li className="rounded-sm">
-                      <a className="flex items-center p-2 space-x-3 rounded-md">
+                      <h6 className="flex items-center p-2 space-x-3 rounded-md">
                         <span className="text-gray-100 hover:text-black font-poppins">
                           régimes disciplinaires, sanctions
                         </span>
-                      </a>
+                      </h6>
                     </li>
                     <li className="rounded-sm">
-                      <a className="flex items-center p-2 space-x-3 rounded-md">
+                      <h6 className="flex items-center p-2 space-x-3 rounded-md">
                         <span className="text-gray-100 hover:text-black font-poppins">
                           Dispositifs D'alert
                         </span>
-                      </a>
+                      </h6>
                     </li>
                     <li className="rounded-sm">
-                      <a className="flex items-center p-2 space-x-3 rounded-md">
+                      <h6 className="flex items-center p-2 space-x-3 rounded-md">
                         <span className="text-gray-100 hover:text-black font-poppins">
                           Charte Relations Sous-Traitrants
                         </span>
-                      </a>
+                      </h6>
                     </li>
                     <li className="rounded-sm">
-                      <a className="flex items-center p-2 space-x-3 rounded-md">
+                      <h6 className="flex items-center p-2 space-x-3 rounded-md">
                         <span className="text-gray-100 hover:text-black font-poppins">
                           9 mesures de Base concrètes pour lutter contre la
                           corruption et prévenir les conflits d’intérêt
                         </span>
-                      </a>
+                      </h6>
                     </li>
                   </ul>
                 </div>
