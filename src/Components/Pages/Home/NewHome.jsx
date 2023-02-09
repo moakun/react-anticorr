@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../Navbar/NavBar';
 import { useAuthContext } from '../../../Hooks/useAuthContext';
 import Image from '../../Assets/nono.png';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 function NewHome() {
   const { user } = useAuthContext();
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
       <NavBar />
@@ -44,13 +61,49 @@ function NewHome() {
                 </button>
               </Link>
               {user && (
-                <Link to="/course">
-                  <button className="h-12 m-3 p-2 text-white font-bold rounded bg-red-500 font-poppins hover:bg-red-900 transition ease-in delay-50">
-                    Commencez La Formation!
-                  </button>
-                </Link>
+                <button
+                  onClick={handleClickOpen}
+                  className="h-12 m-3 p-2 text-white font-bold rounded bg-red-500 font-poppins hover:bg-red-900 transition ease-in delay-50"
+                >
+                  Commencez La Formation!
+                </button>
               )}
             </div>
+            <Dialog
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                <div className="font-poppins">{'Commencer la formation?'}</div>
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  <div className="font-poppins">
+                    Vous êtes sur le point de commencer la formation Anti
+                    Corruption. Veuillez bien être sûr que vous avez une bonne
+                    Connexion internet. Après avoir fini les vidéos
+                    explicatives; il vous faudra faire un quiz auquel il vous
+                    faudra un Minimum de 80% pour accéder à un questionnaire
+                    qu'il vous faudra remplir pour finalement recevoir votre
+                    attestation.
+                  </div>
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>
+                  <div className="font-poppins">Pas Maintenant</div>
+                </Button>
+                <Link to="/course">
+                  <Button onClick={handleClose} autoFocus>
+                    <span className="font-poppins">
+                      C'est Bon! Je veux Commencer
+                    </span>
+                  </Button>
+                </Link>
+              </DialogActions>
+            </Dialog>
           </div>
           <span className="font-poppins">
             En Cas De Problème
