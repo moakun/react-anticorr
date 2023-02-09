@@ -38,7 +38,7 @@ function Attestasion() {
     html2canvas(downloadRef.current).then((canvas) => {
       const pdf = new jsPDF('p', 'mm', 'a4');
       pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 380, 100);
-      pdf.save('download.pdf');
+      pdf.save('Attestation.pdf');
     });
     handleSubmit();
   };
