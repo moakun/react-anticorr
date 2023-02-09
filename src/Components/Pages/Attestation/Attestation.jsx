@@ -23,19 +23,13 @@ function Attestasion() {
     await gotAttestation(userName, firstName, lastName, companyName);
   };
 
-  const generatePDF = async () => {
-    const element = document.querySelector('#content');
-    const canvas = await html2canvas(element);
-    const imgData = canvas.toDataURL('image/png');
+  const generatePDF = () => {
     const doc = new jsPDF('landscape', 'pt', 'a4');
-    const imgWidth = element.offsetWidth;
-    const imgHeight = element.offsetHeight;
-    const pageWidth = doc.internal.pageSize.getWidth();
-    const pageHeight = doc.internal.pageSize.getHeight();
-    const x = (pageWidth - imgWidth) / 140;
-    const y = (pageHeight - imgHeight) / 140;
-    doc.addImage(imgData, 'PNG', x, y, imgWidth, imgHeight);
-    doc.save('Attestation.pdf');
+    doc.html(document.querySelector('#content'), {
+      callback: function (pdf) {
+        pdf.save('Attestation.pdf');
+      },
+    });
     handleSubmit();
   };
 
