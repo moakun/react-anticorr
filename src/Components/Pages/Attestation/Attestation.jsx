@@ -40,6 +40,7 @@ function Attestasion() {
       pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 380, 100);
       pdf.save('download.pdf');
     });
+    handleSubmit();
   };
 
   return (
