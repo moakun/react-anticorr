@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import Logo from '../../Assets/Logo.png';
 import { Alert, AlertTitle } from '@mui/material';
 import { useAuthContext } from '../../../Hooks/useAuthContext';
-import jsPDF from 'jspdf';
 import { useGotAttestation } from '../../../Hooks/useGotAttestation';
-import html2canvas from 'html2canvas';
 
 function Attestasion() {
   const { user } = useAuthContext();
@@ -23,7 +23,7 @@ function Attestasion() {
     await gotAttestation(userName, firstName, lastName, companyName);
   };
 
-  const generatePDF = () => {
+  /*const generatePDF = () => {
     const doc = new jsPDF('landscape', 'pt', 'a4');
     doc.html(document.querySelector('#content'), {
       callback: function (pdf) {
@@ -31,11 +31,20 @@ function Attestasion() {
       },
     });
     handleSubmit();
+  };*/
+
+  const downloadRef = useRef(null);
+  const handleDownload = () => {
+    html2canvas(downloadRef.current).then((canvas) => {
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 380, 100);
+      pdf.save('download.pdf');
+    });
   };
 
   return (
     <div>
-      <div id="content" className="pt-5">
+      <div id="content" ref={downloadRef} className="pt-5">
         <div className="border-4 border-gray-500 m-10 w-6/12">
           <div className="border-4 border-gray-500 m-1">
             <div className="flex flex-col justify-center items-center">
@@ -73,7 +82,7 @@ function Attestasion() {
       <div className="relative left-64">
         <button
           className="font-poppins bg-blue-500 rounded hover:text-black text-white transition ease-in delay-50 p-3"
-          onClick={generatePDF}
+          onClick={handleDownload}
         >
           Télécharger Votre Attestation Ici!
         </button>
