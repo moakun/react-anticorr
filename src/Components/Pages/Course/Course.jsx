@@ -70,7 +70,7 @@ function Course() {
             <div className="flex flex-col items-center">
               <video width="700" height="700" controls>
                 <source
-                  src="https://d21ulo4r1z07kx.cloudfront.net/newPartOne.mp4"
+                  src="https://d21ulo4r1z07kx.cloudfront.net/lastPartOne.mp4"
                   type="video/mp4"
                 ></source>
               </video>
