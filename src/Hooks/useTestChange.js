@@ -12,19 +12,16 @@ export const useTestChange = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch(
-      'https://shark-app-zrqqk.ondigitalocean.app/api/user/testChange',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userName,
-          firstName,
-          lastName,
-          companyName,
-        }),
-      }
-    );
+    const response = await fetch('https://seahorse-app-lckpq.ondigitalocean.app/api/user/testChange', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userName,
+        firstName,
+        lastName,
+        companyName,
+      }),
+    });
 
     const json = await response.json();
 

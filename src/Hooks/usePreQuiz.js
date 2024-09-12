@@ -26,28 +26,25 @@ export const usePreQuiz = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch(
-      'https://shark-app-zrqqk.ondigitalocean.app/api/user/preQuiz',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userName,
-          firstName,
-          lastName,
-          companyName,
-          dispositif,
-          engagement,
-          identification,
-          formation,
-          procedure,
-          dispositifAlert,
-          certifierISO,
-          mepSystem,
-          intention,
-        }),
-      }
-    );
+    const response = await fetch('https://seahorse-app-lckpq.ondigitalocean.app/api/user/preQuiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userName,
+        firstName,
+        lastName,
+        companyName,
+        dispositif,
+        engagement,
+        identification,
+        formation,
+        procedure,
+        dispositifAlert,
+        certifierISO,
+        mepSystem,
+        intention,
+      }),
+    });
 
     const json = await response.json();
     if (!response.ok) {

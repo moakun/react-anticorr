@@ -11,7 +11,7 @@ export const useGotAttestation = () => {
     setError(null);
 
     const response = await fetch(
-      'https://shark-app-zrqqk.ondigitalocean.app/api/user/gotAttestation',
+      'https://seahorse-app-lckpq.ondigitalocean.app/api/user/gotAttestation',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

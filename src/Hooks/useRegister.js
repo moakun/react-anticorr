@@ -17,20 +17,17 @@ export const useRegister = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch(
-      'https://shark-app-zrqqk.ondigitalocean.app/api/user/register',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          userName,
-          companyName,
-          password,
-        }),
-      }
-    );
+    const response = await fetch('https://seahorse-app-lckpq.ondigitalocean.app/api/user/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        userName,
+        companyName,
+        password,
+      }),
+    });
     const json = await response.json();
 
     if (!response.ok) {
