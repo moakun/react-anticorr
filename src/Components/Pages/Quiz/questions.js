@@ -42,7 +42,7 @@ const questions = [
   },
   {
     question:
-      'La norme en vigueur ISO qui définit les exigences relatives au système de management anticorruption est la norme :',
+      'La norme ISO en vigueur qui définit les exigences relatives au système de management anticorruption est la norme :',
     answerOptions: [
       { answer: 'ISO 9001 version 2015' },
       { answer: 'ISO 14001 version 2015' },

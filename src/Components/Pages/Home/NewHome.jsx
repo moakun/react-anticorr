@@ -9,10 +9,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Typography from '@mui/material/Typography';
 
-function NewHome() {
+export default function NewHome() {
   const { user } = useAuthContext();
-
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -39,6 +39,7 @@ function NewHome() {
           <img
             className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
             src={Image}
+            alt=""
           />
         </div>
         <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
@@ -76,11 +77,13 @@ function NewHome() {
               aria-describedby="alert-dialog-description"
             >
               <DialogTitle id="alert-dialog-title">
-                <div className="font-poppins">{'Commencer la formation?'}</div>
+                <Typography className="font-poppins">
+                  Commencer la formation?
+                </Typography>
               </DialogTitle>
               <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                  <div className="font-poppins">
+                  <Typography component="div" className="font-poppins">
                     Vous êtes sur le point de commencer la formation Anti
                     Corruption. Veuillez bien être sûr que vous avez une bonne
                     Connexion internet. Après avoir fini les vidéos
@@ -88,32 +91,30 @@ function NewHome() {
                     faudra un Minimum de 80% pour accéder à un questionnaire
                     qu'il vous faudra remplir pour finalement recevoir votre
                     attestation.
-                  </div>
+                  </Typography>
                 </DialogContentText>
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClose}>
-                  <div className="font-poppins">Pas Maintenant</div>
+                  <Typography className="font-poppins">Pas Maintenant</Typography>
                 </Button>
                 <Link to="/course">
                   <Button onClick={handleClose} autoFocus>
-                    <span className="font-poppins">
+                    <Typography className="font-poppins">
                       C'est Bon! Je veux Commencer
-                    </span>
+                    </Typography>
                   </Button>
                 </Link>
               </DialogActions>
             </Dialog>
           </div>
-          <span className="font-poppins">
+          <Typography component="div" className="font-poppins">
             En Cas De Problème
             <br /> Veuillez Contactez l'email Suivant:
             <br /> developedbymoe@gmail.com
-          </span>
+          </Typography>
         </div>
       </div>
     </div>
   );
 }
-
-export default NewHome;

@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import React, { createContext, useReducer, useEffect, useMemo } from 'react';
 
 export const AuthContext = createContext();
 
@@ -24,10 +24,13 @@ export const AuthContextProvider = ({ children }) => {
       dispatch({ type: 'LOGIN', payload: user });
     }
   }, []);
-  console.log('AuthContext state:', state);
+
+  // Remove the console.log statement from here
+
+  const contextValue = useMemo(() => ({ ...state, dispatch }), [state]);
 
   return (
-    <AuthContext.Provider value={{ ...state, dispatch }}>
+    <AuthContext.Provider value={contextValue}>
       {children}
     </AuthContext.Provider>
   );
