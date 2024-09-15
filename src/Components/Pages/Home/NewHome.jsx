@@ -57,14 +57,14 @@ export default function NewHome() {
             </p>
             <div className="flex items-center relative right-3">
               <Link to="/register">
-                <button className="h-12 m-3 p-2 text-white font-bold rounded bg-blue-500 font-poppins hover:bg-blue-900 transition ease-in delay-50">
+                <button className="h-12 m-1 p-2 text-white font-bold rounded bg-blue-500 font-poppins hover:bg-blue-900 transition ease-in delay-50">
                   Créer Votre Compte Ici!
                 </button>
               </Link>
               {user && (
                 <button
                   onClick={handleClickOpen}
-                  className="h-12 m-3 p-2 text-white font-bold rounded bg-red-500 font-poppins hover:bg-red-900 transition ease-in delay-50"
+                  className="h-12 m-1 p-2 text-white font-bold rounded bg-red-500 font-poppins hover:bg-red-900 transition ease-in delay-50"
                 >
                   Commencez La Formation!
                 </button>
