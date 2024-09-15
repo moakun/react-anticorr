@@ -98,7 +98,7 @@ export default function NewHome() {
                 <Button onClick={handleClose}>
                   <Typography className="font-poppins">Pas Maintenant</Typography>
                 </Button>
-                <Link to="/newCourse">
+                <Link to="/course">
                   <Button onClick={handleClose} autoFocus>
                     <Typography className="font-poppins">
                       C'est Bon! Je veux Commencer
